@@ -1,0 +1,30 @@
+name: versiculos_diarios
+description: "Versículos Diários — app cristão: versículo do dia, Bíblia (ARC), ajuda por tema e Pão Nosso."
+publish_to: "none"
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
+
+# Dependências gratuitas, sem mensalidade. Nada pago.
+dependencies:
+  flutter:
+    sdk: flutter
+  # Leitura por voz do Pão Nosso (voz gratuita do sistema do celular).
+  flutter_tts: ^4.2.3
+  # Notificação da manhã com o versículo do dia (recurso local do celular).
+  flutter_local_notifications: ^18.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/biblia/pt_arc.json
+    - assets/versiculos/versiculos_90_prova.json
+    - assets/ajuda/fichas_ajuda_rascunho.json
+    - assets/pao_nosso/pao_nosso.json

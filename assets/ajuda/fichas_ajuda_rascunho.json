@@ -1,0 +1,94 @@
+{
+  "fichas": "rascunho",
+  "aviso": "RASCUNHO - DE PROVA. Aguardando aprovacao e correcao do Edson.",
+  "modelo": [
+    "acolhimento",
+    "referencia",
+    "versiculo_arc",
+    "palavra_curta",
+    "oracao",
+    "proximo_passo"
+  ],
+  "fichas_lista": [
+    {
+      "tema": "Estou triste",
+      "referencia": "Salmos 42:11",
+      "tom": "Consolo, sem minimizar a dor",
+      "acolhimento": "A tristeza que você sente é real, e Deus não a ignora. Até o salmista, homem segundo o coração de Deus, se sentiu abatido — e falou disso com Deus.",
+      "palavra_curta": "O salmista não esconde a tristeza: ele pergunta à própria alma por que ela está abatida. Mas ele não para aí — ele lembra a si mesmo de esperar em Deus. A tristeza pode estar presente hoje, mas ela não é a última palavra. Deus continua sendo a salvação do seu rosto, e a esperança não depende de o sentimento passar primeiro.",
+      "oracao": "Senhor, minha alma está abatida, e eu não consigo fingir que não está. Eu espero em Ti, mesmo sem entender. Lembra-me de que Tu estás comigo neste dia triste. Em nome de Jesus, amém.",
+      "proximo_passo": "Leia o Salmo 42 completo no aplicativo e procure o seu pastor ou alguém de confiança na igreja para conversar.",
+      "versiculo_arc": "Por que estás abatida, ó minha alma, e por que te perturbas dentro de mim? Espera em Deus, pois ainda o louvarei. Ele é a salvação da minha face e o meu Deus."
+    },
+    {
+      "tema": "Estou ansioso",
+      "referencia": "Filipenses 4:6-7",
+      "tom": "Calma e entrega em oração",
+      "acolhimento": "A ansiedade aperta o peito e não deixa a mente descansar. Deus conhece esse peso — e Ele mesmo ensinou o caminho para entregá-lo.",
+      "palavra_curta": "A ordem não é 'não sinta nada', e sim: não fique sozinho com a inquietação. Leve cada preocupação a Deus em oração, com ação de graças, e a paz dEle — que não depende das circunstâncias — guardará o seu coração e os seus pensamentos. A paz vem depois da entrega, não antes.",
+      "oracao": "Pai, eu Te entrego o que me inquieta, um por um. Eu não consigo resolver tudo, mas confio que Tu podes. Dá-me a Tua paz, que excede o meu entendimento. Em nome de Jesus, amém.",
+      "proximo_passo": "Ore agora, em voz alta ou em silêncio, entregando cada preocupação pelo nome. Depois, leia Filipenses 4 completo.",
+      "versiculo_arc": "Não estejais inquietos por coisa alguma; antes, as vossas petições sejam em tudo conhecidas diante de Deus, pela oração e súplicas, com ação de graças. E a paz de Deus, que excede todo o entendimento, guardará os vossos corações e os vossos sentimentos em Cristo Jesus."
+    },
+    {
+      "tema": "Estou com medo",
+      "referencia": "Isaías 41:10",
+      "tom": "Coragem e presença de Deus",
+      "acolhimento": "O medo faz a gente se sentir sozinho diante de algo maior que nós. Mas Deus promete exatamente o contrário: Ele está contigo.",
+      "palavra_curta": "Deus não diz que o motivo do medo vai sumir — Ele diz que você não vai enfrentá-lo sozinho. 'Eu sou contigo, eu sou o teu Deus, eu te esforço, eu te ajudo, eu te sustento.' São quatro promessas em um só versículo. O medo pode gritar, mas a mão que te sustenta é a destra da justiça de Deus.",
+      "oracao": "Senhor, eu estou com medo, e Te confesso isso. Lembra-me de que Tu estás comigo e me sustentas com a Tua mão. Dá-me coragem para dar o próximo passo. Em nome de Jesus, amém.",
+      "proximo_passo": "Leia Isaías 41 completo e anote as promessas de Deus para você. Se o medo for muito forte, converse com o seu pastor.",
+      "versiculo_arc": "não temas, porque eu sou contigo; não te assombres, porque eu sou o teu Deus; eu te esforço, e te ajudo, e te sustento com a destra da minha justiça."
+    },
+    {
+      "tema": "Preciso de força",
+      "referencia": "Isaías 40:31",
+      "tom": "Renovo e perseverança",
+      "acolhimento": "Quando as forças acabam, a vontade de desistir aparece. Deus conhece o seu cansaço — e Ele renova quem espera nEle.",
+      "palavra_curta": "A promessa não é para quem nunca cansa, e sim para quem espera no Senhor. Os que esperam renovam as forças: sobem como águias, correm sem se cansar, caminham sem se fatigar. Esperar no Senhor não é ficar parado — é continuar caminhando, confiando que a força vem dEle, um dia de cada vez.",
+      "oracao": "Senhor, as minhas forças acabaram, mas eu espero em Ti. Renova-me hoje, como prometeste. Dá-me asas de águia para hoje e passos firmes para amanhã. Em nome de Jesus, amém.",
+      "proximo_passo": "Leia Isaías 40 completo e descanse hoje sem culpa: o renovo vem do Senhor, não do seu esforço.",
+      "versiculo_arc": "Mas os que esperam no Senhor renovarão as suas forças e subirão com asas como águias; correrão e não se cansarão; caminharão e não se fatigarão."
+    },
+    {
+      "tema": "Estou em luto",
+      "referencia": "Salmos 34:18",
+      "tom": "Proximidade de Deus no sofrimento",
+      "acolhimento": "A dor da perda não tem palavras que a resolvam. Deus não está longe de você neste momento — Ele está perto, justamente agora.",
+      "palavra_curta": "Quando o coração se quebra, a promessa é que o Senhor está perto dos quebrantados de coração. Ele não pede que você 'supere rápido' nem que finja estar bem. Ele salva os contritos de espírito — os que estão com o coração em pedaços. Você pode chorar diante dEle: Ele está perto.",
+      "oracao": "Senhor, meu coração está quebrantado e eu não tenho forças. Fica perto de mim, como prometeste. Consola-me com a Tua presença, um dia de cada vez. Em nome de Jesus, amém.",
+      "proximo_passo": "Não passe por isso sozinho: procure o seu pastor e pessoas próximas. Leia o Salmo 34 completo quando puder.",
+      "versiculo_arc": "Perto está o Senhor dos que têm o coração quebrantado e salva os contritos de espírito."
+    },
+    {
+      "tema": "Problemas na família",
+      "referencia": "Josué 24:15",
+      "tom": "Compromisso e oração pela casa",
+      "acolhimento": "Quando a família passa por problemas, a casa inteira sente. Deus se importa com a sua casa — e Ele ouve a decisão de quem escolhe servi-Lo.",
+      "palavra_curta": "Josué não esperou a família inteira concordar para decidir: 'eu e a minha casa serviremos ao Senhor'. A sua decisão de buscar a Deus não depende de todos estarem bem primeiro. Comece por você, ore pela sua casa todos os dias, e deixe Deus trabalhar no coração de cada um.",
+      "oracao": "Senhor, eu escolho servir a Ti, e entrego a minha casa nas Tuas mãos. Trabalha no coração de cada um da minha família. Dá-nos paz, perdão e união. Em nome de Jesus, amém.",
+      "proximo_passo": "Ore pela sua família todos os dias desta semana e leia Josué 24 completo. Se houver conflito grave, busque o aconselhamento do seu pastor.",
+      "versiculo_arc": "Porém, se vos parece mal aos vossos olhos servir ao Senhor, escolhei hoje a quem sirvais: se os deuses a quem serviram vossos pais, que estavam dalém do rio, ou os deuses dos amorreus, em cuja terra habitais; porém eu e a minha casa serviremos ao Senhor."
+    },
+    {
+      "tema": "Preciso de uma direção",
+      "referencia": "Provérbios 3:5-6",
+      "tom": "Confiança e espera",
+      "acolhimento": "Não saber o que decidir é angustiante. Deus não esconde a direção de quem O busca de todo o coração.",
+      "palavra_curta": "A direção de Deus não vem de entender tudo antes — vem de confiar nEle de todo o coração e reconhecê-Lo em todos os caminhos. Quando você entrega a decisão a Deus, em vez de se apoiar só no seu próprio entendimento, Ele mesmo endireita as suas veredas. Confie primeiro; o caminho aparece depois.",
+      "oracao": "Senhor, eu não sei o que fazer, mas confio em Ti de todo o meu coração. Reconheço-Te neste caminho: endireita as minhas veredas e mostra-me o próximo passo. Em nome de Jesus, amém.",
+      "proximo_passo": "Leia Provérbios 3 completo e escreva a decisão que precisa tomar. Ore por ela durante 3 dias antes de decidir.",
+      "versiculo_arc": "Confia no Senhor de todo o teu coração e não te estribes no teu próprio entendimento. Reconhece-o em todos os teus caminhos, e ele endireitará as tuas veredas."
+    },
+    {
+      "tema": "Quero conhecer a salvação",
+      "referencia": "João 3:16",
+      "tom": "Apresentação simples do evangelho",
+      "acolhimento": "Você está buscando a coisa mais importante que existe: a salvação. E a boa notícia é que Deus já fez tudo para que você a receba.",
+      "palavra_curta": "Deus amou o mundo — amou você — de tal maneira que deu o Seu único Filho. Quem crê em Jesus não perece, mas tem a vida eterna. A salvação não se compra com boas obras nem se conquista com esforço: ela é um presente de Deus para quem crê em Jesus Cristo, que morreu na cruz pelos nossos pecados e ressuscitou.",
+      "oracao": "Senhor Jesus, eu creio que Tu morreste por mim na cruz e ressuscitaste. Eu Te recebo como meu Salvador. Perdoa os meus pecados e dá-me a vida eterna. Em nome de Jesus, amém.",
+      "proximo_passo": "Leia o Evangelho de João, capítulo 3, completo. E procure uma igreja para conversar com um pastor sobre a sua decisão.",
+      "versiculo_arc": "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna."
+    }
+  ]
+}

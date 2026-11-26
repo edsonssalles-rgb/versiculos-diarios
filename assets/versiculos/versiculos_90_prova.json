@@ -1,0 +1,646 @@
+{
+  "lista": "prova",
+  "aviso": "LISTA DE PROVA - versao final sera definida pelo Edson, versiculo por versiculo.",
+  "dia_1": "segunda-feira",
+  "ciclo_semanal": {
+    "segunda-feira": "Motivacional",
+    "terça-feira": "Milagre e cura",
+    "quarta-feira": "Buscar a Deus e congregar",
+    "quinta-feira": "Amor da família",
+    "sexta-feira": "Solução do problema impossível",
+    "sábado": "Reflexivo",
+    "domingo": "Salvação"
+  },
+  "versiculos": [
+    {
+      "dia": 1,
+      "dia_da_semana": "segunda-feira",
+      "tema": "Motivacional",
+      "referencia": "2 Coríntios 12:10",
+      "texto_arc": "Pelo que sinto prazer nas fraquezas, nas injúrias, nas necessidades, nas perseguições, nas angústias, por amor de Cristo. Porque, quando estou fraco, então, sou forte."
+    },
+    {
+      "dia": 2,
+      "dia_da_semana": "terça-feira",
+      "tema": "Milagre e cura",
+      "referencia": "Marcos 9:23",
+      "texto_arc": "E Jesus disse-lhe: Se tu podes crer; tudo é possível ao que crê."
+    },
+    {
+      "dia": 3,
+      "dia_da_semana": "quarta-feira",
+      "tema": "Buscar a Deus e congregar",
+      "referencia": "Hebreus 10:25",
+      "texto_arc": "não deixando a nossa congregação, como é costume de alguns; antes, admoestando-nos uns aos outros; e tanto mais quanto vedes que se vai aproximando aquele Dia."
+    },
+    {
+      "dia": 4,
+      "dia_da_semana": "quinta-feira",
+      "tema": "Amor da família",
+      "referencia": "Josué 24:15",
+      "texto_arc": "Porém, se vos parece mal aos vossos olhos servir ao Senhor, escolhei hoje a quem sirvais: se os deuses a quem serviram vossos pais, que estavam dalém do rio, ou os deuses dos amorreus, em cuja terra habitais; porém eu e a minha casa serviremos ao Senhor."
+    },
+    {
+      "dia": 5,
+      "dia_da_semana": "sexta-feira",
+      "tema": "Solução do problema impossível",
+      "referencia": "Lucas 1:37",
+      "texto_arc": "Porque para Deus nada é impossível."
+    },
+    {
+      "dia": 6,
+      "dia_da_semana": "sábado",
+      "tema": "Reflexivo",
+      "referencia": "Lamentações 3:22-23",
+      "texto_arc": "As misericórdias do Senhor são a causa de não sermos consumidos; porque as suas misericórdias não têm fim. Novas são cada manhã; grande é a tua fidelidade."
+    },
+    {
+      "dia": 7,
+      "dia_da_semana": "domingo",
+      "tema": "Salvação",
+      "referencia": "Marcos 8:36",
+      "texto_arc": "Pois que aproveitaria ao homem ganhar todo o mundo e perder a sua alma?"
+    },
+    {
+      "dia": 8,
+      "dia_da_semana": "segunda-feira",
+      "tema": "Motivacional",
+      "referencia": "Josué 1:9",
+      "texto_arc": "Não to mandei eu? Esforça-te e tem bom ânimo; não pasmes, nem te espantes, porque o Senhor, teu Deus, é contigo, por onde quer que andares."
+    },
+    {
+      "dia": 9,
+      "dia_da_semana": "terça-feira",
+      "tema": "Milagre e cura",
+      "referencia": "Isaías 53:4",
+      "texto_arc": "Verdadeiramente, ele tomou sobre si as nossas enfermidades e as nossas dores levou sobre si; e nós o reputamos por aflito, ferido de Deus e oprimido."
+    },
+    {
+      "dia": 10,
+      "dia_da_semana": "quarta-feira",
+      "tema": "Buscar a Deus e congregar",
+      "referencia": "Mateus 7:7",
+      "texto_arc": "Pedi, e dar-se-vos-á; buscai e encontrareis; batei, e abrir-se-vos-á."
+    },
+    {
+      "dia": 11,
+      "dia_da_semana": "quinta-feira",
+      "tema": "Amor da família",
+      "referencia": "1 Coríntios 13:4",
+      "texto_arc": "O amor é sofredor, é benigno; o amor não é invejoso; o amor não trata com leviandade, não se ensoberbece,"
+    },
+    {
+      "dia": 12,
+      "dia_da_semana": "sexta-feira",
+      "tema": "Solução do problema impossível",
+      "referencia": "Jeremias 32:27",
+      "texto_arc": "Eis que eu sou o Senhor, o Deus de toda a carne. Acaso, seria qualquer coisa maravilhosa demais para mim?"
+    },
+    {
+      "dia": 13,
+      "dia_da_semana": "sábado",
+      "tema": "Reflexivo",
+      "referencia": "Salmos 90:12",
+      "texto_arc": "Ensina-nos a contar os nossos dias, de tal maneira que alcancemos coração sábio."
+    },
+    {
+      "dia": 14,
+      "dia_da_semana": "domingo",
+      "tema": "Salvação",
+      "referencia": "João 3:16",
+      "texto_arc": "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna."
+    },
+    {
+      "dia": 15,
+      "dia_da_semana": "segunda-feira",
+      "tema": "Motivacional",
+      "referencia": "Filipenses 4:13",
+      "texto_arc": "Posso todas as coisas naquele que me fortalece."
+    },
+    {
+      "dia": 16,
+      "dia_da_semana": "terça-feira",
+      "tema": "Milagre e cura",
+      "referencia": "Salmos 103:3",
+      "texto_arc": "É ele que perdoa todas as tuas iniquidades e sara todas as tuas enfermidades;"
+    },
+    {
+      "dia": 17,
+      "dia_da_semana": "quarta-feira",
+      "tema": "Buscar a Deus e congregar",
+      "referencia": "Salmos 100:4",
+      "texto_arc": "Entrai pelas portas dele com louvor e em seus átrios, com hinos; louvai-o e bendizei o seu nome."
+    },
+    {
+      "dia": 18,
+      "dia_da_semana": "quinta-feira",
+      "tema": "Amor da família",
+      "referencia": "1 Coríntios 13:7",
+      "texto_arc": "tudo sofre, tudo crê, tudo espera, tudo suporta."
+    },
+    {
+      "dia": 19,
+      "dia_da_semana": "sexta-feira",
+      "tema": "Solução do problema impossível",
+      "referencia": "Marcos 10:27",
+      "texto_arc": "Jesus, porém, olhando para eles, disse: Para os homens é impossível, mas não para Deus, porque para Deus todas as coisas são possíveis."
+    },
+    {
+      "dia": 20,
+      "dia_da_semana": "sábado",
+      "tema": "Reflexivo",
+      "referencia": "Salmos 46:10",
+      "texto_arc": "Aquietai-vos e sabei que eu sou Deus; serei exaltado entre as nações; serei exaltado sobre a terra."
+    },
+    {
+      "dia": 21,
+      "dia_da_semana": "domingo",
+      "tema": "Salvação",
+      "referencia": "João 3:17",
+      "texto_arc": "Porque Deus enviou o seu Filho ao mundo não para que condenasse o mundo, mas para que o mundo fosse salvo por ele."
+    },
+    {
+      "dia": 22,
+      "dia_da_semana": "segunda-feira",
+      "tema": "Motivacional",
+      "referencia": "Deuteronômio 31:6",
+      "texto_arc": "Esforçai-vos, e animai-vos; não temais, nem vos espanteis diante deles, porque o Senhor, vosso Deus, é o que vai convosco; não vos deixará nem vos desamparará."
+    },
+    {
+      "dia": 23,
+      "dia_da_semana": "terça-feira",
+      "tema": "Milagre e cura",
+      "referencia": "Mateus 17:20",
+      "texto_arc": "E Jesus lhes disse: Por causa da vossa pequena fé; porque em verdade vos digo que, se tiverdes fé como um grão de mostarda, direis a este monte: Passa daqui para acolá — e há de passar; e nada vos será impossível."
+    },
+    {
+      "dia": 24,
+      "dia_da_semana": "quarta-feira",
+      "tema": "Buscar a Deus e congregar",
+      "referencia": "Salmos 122:1",
+      "texto_arc": "Alegrei-me quando me disseram: Vamos à Casa do Senhor!"
+    },
+    {
+      "dia": 25,
+      "dia_da_semana": "quinta-feira",
+      "tema": "Amor da família",
+      "referencia": "1 Coríntios 13:8",
+      "texto_arc": "O amor nunca falha; mas, havendo profecias, serão aniquiladas; havendo línguas, cessarão; havendo ciência, desaparecerá;"
+    },
+    {
+      "dia": 26,
+      "dia_da_semana": "sexta-feira",
+      "tema": "Solução do problema impossível",
+      "referencia": "Gênesis 18:14",
+      "texto_arc": "Haveria coisa alguma difícil ao Senhor? Ao tempo determinado, tornarei a ti por este tempo da vida, e Sara terá um filho."
+    },
+    {
+      "dia": 27,
+      "dia_da_semana": "sábado",
+      "tema": "Reflexivo",
+      "referencia": "Eclesiastes 3:1",
+      "texto_arc": "Tudo tem o seu tempo determinado, e há tempo para todo o propósito debaixo do céu:"
+    },
+    {
+      "dia": 28,
+      "dia_da_semana": "domingo",
+      "tema": "Salvação",
+      "referencia": "Romanos 3:23",
+      "texto_arc": "Porque todos pecaram e destituídos estão da glória de Deus,"
+    },
+    {
+      "dia": 29,
+      "dia_da_semana": "segunda-feira",
+      "tema": "Motivacional",
+      "referencia": "Salmos 27:1",
+      "texto_arc": "O Senhor é a minha luz e a minha salvação; a quem temerei? O Senhor é a força da minha vida; de quem me recearei?"
+    },
+    {
+      "dia": 30,
+      "dia_da_semana": "terça-feira",
+      "tema": "Milagre e cura",
+      "referencia": "Marcos 11:24",
+      "texto_arc": "Por isso, vos digo que tudo o que pedirdes, orando, crede que o recebereis e tê-lo-eis."
+    },
+    {
+      "dia": 31,
+      "dia_da_semana": "quarta-feira",
+      "tema": "Buscar a Deus e congregar",
+      "referencia": "Jeremias 29:13",
+      "texto_arc": "E buscar-me-eis e me achareis quando me buscardes de todo o vosso coração."
+    },
+    {
+      "dia": 32,
+      "dia_da_semana": "quinta-feira",
+      "tema": "Amor da família",
+      "referencia": "1 João 4:8",
+      "texto_arc": "Aquele que não ama não conhece a Deus, porque Deus é amor."
+    },
+    {
+      "dia": 33,
+      "dia_da_semana": "sexta-feira",
+      "tema": "Solução do problema impossível",
+      "referencia": "Êxodo 14:14",
+      "texto_arc": "O Senhor pelejará por vós, e vos calareis."
+    },
+    {
+      "dia": 34,
+      "dia_da_semana": "sábado",
+      "tema": "Reflexivo",
+      "referencia": "Salmos 19:1",
+      "texto_arc": "Os céus manifestam a glória de Deus e o firmamento anuncia a obra das suas mãos."
+    },
+    {
+      "dia": 35,
+      "dia_da_semana": "domingo",
+      "tema": "Salvação",
+      "referencia": "João 5:24",
+      "texto_arc": "Na verdade, na verdade vos digo que quem ouve a minha palavra e crê naquele que me enviou tem a vida eterna e não entrará em condenação, mas passou da morte para a vida."
+    },
+    {
+      "dia": 36,
+      "dia_da_semana": "segunda-feira",
+      "tema": "Motivacional",
+      "referencia": "Salmos 118:14",
+      "texto_arc": "O Senhor é a minha força e o meu cântico, porque ele me salvou."
+    },
+    {
+      "dia": 37,
+      "dia_da_semana": "terça-feira",
+      "tema": "Milagre e cura",
+      "referencia": "Tiago 5:15",
+      "texto_arc": "e a oração da fé salvará o doente, e o Senhor o levantará; e, se houver cometido pecados, ser-lhe-ão perdoados."
+    },
+    {
+      "dia": 38,
+      "dia_da_semana": "quarta-feira",
+      "tema": "Buscar a Deus e congregar",
+      "referencia": "Salmos 27:4",
+      "texto_arc": "Uma coisa pedi ao Senhor e a buscarei: que possa morar na Casa do Senhor todos os dias da minha vida, para contemplar a formosura do Senhor e aprender no seu templo."
+    },
+    {
+      "dia": 39,
+      "dia_da_semana": "quinta-feira",
+      "tema": "Amor da família",
+      "referencia": "Efésios 5:25",
+      "texto_arc": "Vós, maridos, amai vossa mulher, como também Cristo amou a igreja e a si mesmo se entregou por ela,"
+    },
+    {
+      "dia": 40,
+      "dia_da_semana": "sexta-feira",
+      "tema": "Solução do problema impossível",
+      "referencia": "Jeremias 33:3",
+      "texto_arc": "Clama a mim, e responder-te-ei e anunciar-te-ei coisas grandes e firmes, que não sabes."
+    },
+    {
+      "dia": 41,
+      "dia_da_semana": "sábado",
+      "tema": "Reflexivo",
+      "referencia": "Salmos 119:105",
+      "texto_arc": "Lâmpada para os meus pés é tua palavra e luz, para o meu caminho."
+    },
+    {
+      "dia": 42,
+      "dia_da_semana": "domingo",
+      "tema": "Salvação",
+      "referencia": "João 1:12",
+      "texto_arc": "Mas a todos quantos o receberam deu-lhes o poder de serem feitos filhos de Deus: aos que creem no seu nome,"
+    },
+    {
+      "dia": 43,
+      "dia_da_semana": "segunda-feira",
+      "tema": "Motivacional",
+      "referencia": "Romanos 8:31",
+      "texto_arc": "Que diremos, pois, a estas coisas? Se Deus é por nós, quem será contra nós?"
+    },
+    {
+      "dia": 44,
+      "dia_da_semana": "terça-feira",
+      "tema": "Milagre e cura",
+      "referencia": "Êxodo 15:26",
+      "texto_arc": "E disse: Se ouvires atento a voz do Senhor, teu Deus, e fizeres o que é reto diante de seus olhos, e inclinares os teus ouvidos aos seus mandamentos, e guardares todos os seus estatutos, nenhuma das enfermidades porei sobre ti, que pus sobre o Egito; porque eu sou o Senhor, que te sara."
+    },
+    {
+      "dia": 45,
+      "dia_da_semana": "quarta-feira",
+      "tema": "Buscar a Deus e congregar",
+      "referencia": "Mateus 6:33",
+      "texto_arc": "Mas buscai primeiro o Reino de Deus, e a sua justiça, e todas essas coisas vos serão acrescentadas."
+    },
+    {
+      "dia": 46,
+      "dia_da_semana": "quinta-feira",
+      "tema": "Amor da família",
+      "referencia": "Efésios 6:4",
+      "texto_arc": "E vós, pais, não provoqueis a ira a vossos filhos, mas criai-os na doutrina e admoestação do Senhor."
+    },
+    {
+      "dia": 47,
+      "dia_da_semana": "sexta-feira",
+      "tema": "Solução do problema impossível",
+      "referencia": "Salmos 34:17",
+      "texto_arc": "Os justos clamam, e o Senhor os ouve e os livra de todas as suas angústias."
+    },
+    {
+      "dia": 48,
+      "dia_da_semana": "sábado",
+      "tema": "Reflexivo",
+      "referencia": "Provérbios 4:23",
+      "texto_arc": "Sobre tudo o que se deve guardar, guarda o teu coração, porque dele procedem as saídas da vida."
+    },
+    {
+      "dia": 49,
+      "dia_da_semana": "domingo",
+      "tema": "Salvação",
+      "referencia": "Romanos 10:9",
+      "texto_arc": "a saber: Se, com a tua boca, confessares ao Senhor Jesus e, em teu coração, creres que Deus o ressuscitou dos mortos, serás salvo."
+    },
+    {
+      "dia": 50,
+      "dia_da_semana": "segunda-feira",
+      "tema": "Motivacional",
+      "referencia": "Isaías 41:10",
+      "texto_arc": "não temas, porque eu sou contigo; não te assombres, porque eu sou o teu Deus; eu te esforço, e te ajudo, e te sustento com a destra da minha justiça."
+    },
+    {
+      "dia": 51,
+      "dia_da_semana": "terça-feira",
+      "tema": "Milagre e cura",
+      "referencia": "Jeremias 30:17",
+      "texto_arc": "Porque restaurarei a tua saúde e sararei as tuas chagas, diz o Senhor; pois te chamam a enjeitada, dizendo: É Sião, por quem ninguém pergunta."
+    },
+    {
+      "dia": 52,
+      "dia_da_semana": "quarta-feira",
+      "tema": "Buscar a Deus e congregar",
+      "referencia": "Tiago 4:8",
+      "texto_arc": "Chegai-vos a Deus, e ele se chegará a vós. Limpai as mãos, pecadores; e, vós de duplo ânimo, purificai o coração."
+    },
+    {
+      "dia": 53,
+      "dia_da_semana": "quinta-feira",
+      "tema": "Amor da família",
+      "referencia": "Provérbios 22:6",
+      "texto_arc": "Instrui o menino no caminho em que deve andar, e, até quando envelhecer, não se desviará dele."
+    },
+    {
+      "dia": 54,
+      "dia_da_semana": "sexta-feira",
+      "tema": "Solução do problema impossível",
+      "referencia": "Isaías 43:19",
+      "texto_arc": "Eis que farei uma coisa nova, e, agora, sairá à luz; porventura, não a sabereis? Eis que porei um caminho no deserto e rios, no ermo."
+    },
+    {
+      "dia": 55,
+      "dia_da_semana": "sábado",
+      "tema": "Reflexivo",
+      "referencia": "Salmos 139:14",
+      "texto_arc": "Eu te louvarei, porque de um modo terrível e tão maravilhoso fui formado; maravilhosas são as tuas obras, e a minha alma o sabe muito bem."
+    },
+    {
+      "dia": 56,
+      "dia_da_semana": "domingo",
+      "tema": "Salvação",
+      "referencia": "Atos 16:31",
+      "texto_arc": "E eles disseram: Crê no Senhor Jesus Cristo e serás salvo, tu e a tua casa."
+    },
+    {
+      "dia": 57,
+      "dia_da_semana": "segunda-feira",
+      "tema": "Motivacional",
+      "referencia": "Salmos 46:1",
+      "texto_arc": "Deus é o nosso refúgio e fortaleza, socorro bem-presente na angústia."
+    },
+    {
+      "dia": 58,
+      "dia_da_semana": "terça-feira",
+      "tema": "Milagre e cura",
+      "referencia": "Salmos 107:20",
+      "texto_arc": "Enviou a sua palavra, e os sarou, e os livrou da sua destruição."
+    },
+    {
+      "dia": 59,
+      "dia_da_semana": "quarta-feira",
+      "tema": "Buscar a Deus e congregar",
+      "referencia": "Salmos 84:10",
+      "texto_arc": "Porque vale mais um dia nos teus átrios do que, em outra parte, mil. Preferiria estar à porta da Casa do meu Deus, a habitar nas tendas da impiedade."
+    },
+    {
+      "dia": 60,
+      "dia_da_semana": "quinta-feira",
+      "tema": "Amor da família",
+      "referencia": "Salmos 127:3",
+      "texto_arc": "Eis que os filhos são herança do Senhor, e o fruto do ventre, o seu galardão."
+    },
+    {
+      "dia": 61,
+      "dia_da_semana": "sexta-feira",
+      "tema": "Solução do problema impossível",
+      "referencia": "Salmos 50:15",
+      "texto_arc": "E invoca-me no dia da angústia; eu te livrarei, e tu me glorificarás."
+    },
+    {
+      "dia": 62,
+      "dia_da_semana": "sábado",
+      "tema": "Reflexivo",
+      "referencia": "Eclesiastes 12:1",
+      "texto_arc": "Lembra-te do teu Criador nos dias da tua mocidade, antes que venham os maus dias, e cheguem os anos dos quais venhas a dizer: Não tenho neles contentamento;"
+    },
+    {
+      "dia": 63,
+      "dia_da_semana": "domingo",
+      "tema": "Salvação",
+      "referencia": "Efésios 2:8",
+      "texto_arc": "Porque pela graça sois salvos, por meio da fé; e isso não vem de vós; é dom de Deus."
+    },
+    {
+      "dia": 64,
+      "dia_da_semana": "segunda-feira",
+      "tema": "Motivacional",
+      "referencia": "2 Timóteo 1:7",
+      "texto_arc": "Porque Deus não nos deu o espírito de temor, mas de fortaleza, e de amor, e de moderação."
+    },
+    {
+      "dia": 65,
+      "dia_da_semana": "terça-feira",
+      "tema": "Milagre e cura",
+      "referencia": "Mateus 8:17",
+      "texto_arc": "para que se cumprisse o que fora dito pelo profeta Isaías, que diz: Ele tomou sobre si as nossas enfermidades e levou as nossas doenças."
+    },
+    {
+      "dia": 66,
+      "dia_da_semana": "quarta-feira",
+      "tema": "Buscar a Deus e congregar",
+      "referencia": "Isaías 55:6",
+      "texto_arc": "Buscai ao Senhor enquanto se pode achar, invocai-o enquanto está perto."
+    },
+    {
+      "dia": 67,
+      "dia_da_semana": "quinta-feira",
+      "tema": "Amor da família",
+      "referencia": "Salmos 128:3",
+      "texto_arc": "A tua mulher será como a videira frutífera aos lados da tua casa; os teus filhos, como plantas de oliveira, à roda da tua mesa."
+    },
+    {
+      "dia": 68,
+      "dia_da_semana": "sexta-feira",
+      "tema": "Solução do problema impossível",
+      "referencia": "Jó 42:2",
+      "texto_arc": "Bem sei eu que tudo podes, e nenhum dos teus pensamentos pode ser impedido."
+    },
+    {
+      "dia": 69,
+      "dia_da_semana": "sábado",
+      "tema": "Reflexivo",
+      "referencia": "Miqueias 6:8",
+      "texto_arc": "Ele te declarou, ó homem, o que é bom; e que é o que o Senhor pede de ti, senão que pratiques a justiça, e ames a beneficência, e andes humildemente com o teu Deus?"
+    },
+    {
+      "dia": 70,
+      "dia_da_semana": "domingo",
+      "tema": "Salvação",
+      "referencia": "Romanos 6:23",
+      "texto_arc": "Porque o salário do pecado é a morte, mas o dom gratuito de Deus é a vida eterna, por Cristo Jesus, nosso Senhor."
+    },
+    {
+      "dia": 71,
+      "dia_da_semana": "segunda-feira",
+      "tema": "Motivacional",
+      "referencia": "Salmos 37:5",
+      "texto_arc": "Entrega o teu caminho ao Senhor; confia nele, e ele tudo fará."
+    },
+    {
+      "dia": 72,
+      "dia_da_semana": "terça-feira",
+      "tema": "Milagre e cura",
+      "referencia": "Marcos 5:34",
+      "texto_arc": "E ele lhe disse: Filha, a tua fé te salvou; vai em paz e sê curada deste teu mal."
+    },
+    {
+      "dia": 73,
+      "dia_da_semana": "quarta-feira",
+      "tema": "Buscar a Deus e congregar",
+      "referencia": "Salmos 63:1",
+      "texto_arc": "Ó Deus, tu és o meu Deus; de madrugada te buscarei; a minha alma tem sede de ti; a minha carne te deseja muito em uma terra seca e cansada, onde não há água,"
+    },
+    {
+      "dia": 74,
+      "dia_da_semana": "quinta-feira",
+      "tema": "Amor da família",
+      "referencia": "Colossenses 3:20",
+      "texto_arc": "Vós, filhos, obedecei em tudo a vossos pais, porque isto é agradável ao Senhor."
+    },
+    {
+      "dia": 75,
+      "dia_da_semana": "sexta-feira",
+      "tema": "Solução do problema impossível",
+      "referencia": "Salmos 34:19",
+      "texto_arc": "Muitas são as aflições do justo, mas o Senhor o livra de todas."
+    },
+    {
+      "dia": 76,
+      "dia_da_semana": "sábado",
+      "tema": "Reflexivo",
+      "referencia": "Salmos 1:2",
+      "texto_arc": "Antes, tem o seu prazer na lei do Senhor, e na sua lei medita de dia e de noite."
+    },
+    {
+      "dia": 77,
+      "dia_da_semana": "domingo",
+      "tema": "Salvação",
+      "referencia": "João 14:6",
+      "texto_arc": "Disse-lhe Jesus: Eu sou o caminho, e a verdade, e a vida. Ninguém vem ao Pai senão por mim."
+    },
+    {
+      "dia": 78,
+      "dia_da_semana": "segunda-feira",
+      "tema": "Motivacional",
+      "referencia": "Provérbios 18:10",
+      "texto_arc": "Torre forte é o nome do Senhor; para ela correrá o justo e estará em alto retiro."
+    },
+    {
+      "dia": 79,
+      "dia_da_semana": "terça-feira",
+      "tema": "Milagre e cura",
+      "referencia": "Salmos 147:3",
+      "texto_arc": "sara os quebrantados de coração e liga-lhes as feridas;"
+    },
+    {
+      "dia": 80,
+      "dia_da_semana": "quarta-feira",
+      "tema": "Buscar a Deus e congregar",
+      "referencia": "Salmos 105:4",
+      "texto_arc": "Buscai ao Senhor e a sua força; buscai a sua face continuamente."
+    },
+    {
+      "dia": 81,
+      "dia_da_semana": "quinta-feira",
+      "tema": "Amor da família",
+      "referencia": "Efésios 4:2",
+      "texto_arc": "com toda a humildade e mansidão, com longanimidade, suportando-vos uns aos outros em amor,"
+    },
+    {
+      "dia": 82,
+      "dia_da_semana": "sexta-feira",
+      "tema": "Solução do problema impossível",
+      "referencia": "Isaías 59:1",
+      "texto_arc": "Eis que a mão do Senhor não está encolhida, para que não possa salvar; nem o seu ouvido, agravado, para não poder ouvir."
+    },
+    {
+      "dia": 83,
+      "dia_da_semana": "sábado",
+      "tema": "Reflexivo",
+      "referencia": "Tiago 1:5",
+      "texto_arc": "E, se algum de vós tem falta de sabedoria, peça-a a Deus, que a todos dá liberalmente e não o lança em rosto; e ser-lhe-á dada."
+    },
+    {
+      "dia": 84,
+      "dia_da_semana": "domingo",
+      "tema": "Salvação",
+      "referencia": "1 João 5:13",
+      "texto_arc": "Estas coisas vos escrevi, para que saibais que tendes a vida eterna e para que creiais no nome do Filho de Deus."
+    },
+    {
+      "dia": 85,
+      "dia_da_semana": "segunda-feira",
+      "tema": "Motivacional",
+      "referencia": "Salmos 18:2",
+      "texto_arc": "O Senhor é o meu rochedo, e o meu lugar forte, e o meu libertador; o meu Deus, a minha fortaleza, em quem confio; o meu escudo, a força da minha salvação e o meu alto refúgio."
+    },
+    {
+      "dia": 86,
+      "dia_da_semana": "terça-feira",
+      "tema": "Milagre e cura",
+      "referencia": "Isaías 53:5",
+      "texto_arc": "Mas ele foi ferido pelas nossas transgressões e moído pelas nossas iniquidades; o castigo que nos traz a paz estava sobre ele, e, pelas suas pisaduras, fomos sarados."
+    },
+    {
+      "dia": 87,
+      "dia_da_semana": "quarta-feira",
+      "tema": "Buscar a Deus e congregar",
+      "referencia": "Hebreus 4:16",
+      "texto_arc": "Cheguemos, pois, com confiança ao trono da graça, para que possamos alcançar misericórdia e achar graça, a fim de sermos ajudados em tempo oportuno."
+    },
+    {
+      "dia": 88,
+      "dia_da_semana": "quinta-feira",
+      "tema": "Amor da família",
+      "referencia": "1 Pedro 4:8",
+      "texto_arc": "Mas, sobretudo, tende ardente amor uns para com os outros, porque o amor cobrirá a multidão de pecados,"
+    },
+    {
+      "dia": 89,
+      "dia_da_semana": "sexta-feira",
+      "tema": "Solução do problema impossível",
+      "referencia": "Mateus 19:26",
+      "texto_arc": "E Jesus, olhando para eles, disse-lhes: Aos homens é isso impossível, mas a Deus tudo é possível."
+    },
+    {
+      "dia": 90,
+      "dia_da_semana": "sábado",
+      "tema": "Reflexivo",
+      "referencia": "Salmos 103:2",
+      "texto_arc": "Bendize, ó minha alma, ao Senhor, e não te esqueças de nenhum de seus benefícios."
+    }
+  ]
+}

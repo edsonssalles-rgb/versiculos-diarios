@@ -1,5 +1,5 @@
 name: versiculos_diarios
-description: "Versículos Diários — app cristão: versículo do dia, Bíblia (ARC), ajuda por tema e Pão Nosso."
+description: "MyChurch — app cristão: versículo do dia, Bíblia (ARC), ajuda por tema e Pão Nosso."
 publish_to: "none"
 version: 0.1.0+1
 
@@ -28,3 +28,6 @@ flutter:
     - assets/versiculos/versiculos_90_prova.json
     - assets/ajuda/fichas_ajuda_rascunho.json
     - assets/pao_nosso/pao_nosso.json
+    - assets/images/versiculo.jpg
+    - assets/images/pao_nosso.jpg
+    - assets/images/sofrendo.jpg

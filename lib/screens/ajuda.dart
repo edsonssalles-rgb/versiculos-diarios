@@ -22,6 +22,21 @@ class TelaAjuda extends StatelessWidget {
         return ListView(
           padding: const EdgeInsets.all(16),
           children: [
+            Text(
+              'Ajuda',
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineMedium
+                  ?.copyWith(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              'Você está sofrendo? Receba uma palavra no momento de aflição.',
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+                  ),
+            ),
+            const SizedBox(height: 16),
             const Card(
               color: Colors.amberAccent,
               child: Padding(

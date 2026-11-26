@@ -1,5 +1,5 @@
 name: versiculos_diarios
-description: "MyChurch — app cristão: versículo do dia, Bíblia (ARC), ajuda por tema e Pão Nosso."
+description: "MyChurch — app cristão: versículo do dia, Bíblia (ARC), ajuda por tema, Pão Nosso, Contato e Doação."
 publish_to: "none"
 version: 0.1.0+1
 
@@ -15,6 +15,10 @@ dependencies:
   flutter_tts: ^4.2.3
   # Notificação da manhã com o versículo do dia (recurso local do celular).
   flutter_local_notifications: ^18.0.1
+  # Compartilhar o versículo do dia (menu de compartilhar do sistema).
+  share_plus: ^13.3.1
+  # Player de música: toca o "Agnus Dei" (mp3 do Edson, em assets/audio).
+  just_audio: ^0.10.6
 
 dev_dependencies:
   flutter_test:
@@ -31,3 +35,4 @@ flutter:
     - assets/images/versiculo.jpg
     - assets/images/pao_nosso.jpg
     - assets/images/sofrendo.jpg
+    - assets/audio/agnus_dei.mp3

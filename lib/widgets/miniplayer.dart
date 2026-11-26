@@ -1,225 +1,384 @@
 import 'dart:async';
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter_tts/flutter_tts.dart';
-import '../services/dados.dart';
+import '../services/player_musica.dart';
 
-/// Miniplayer estilo Spotify, fixo no rodapé do app (acima da barra de abas).
+/// Duas vistas do MESMO player (PlayerMusica, compartilhado e criado
+/// uma só vez em TelaPrincipal):
 ///
-/// Lê o versículo do dia em voz alta (flutter_tts, pt-BR, velocidade 0.9).
-/// Controles: aleatório, anterior, play/pause, próximo, repetir.
-/// Anterior/próximo andam um versículo na lista de prova (90 versículos);
-/// com o aleatório ligado, o próximo sorteia outro versículo.
+/// - Miniplayer: barra completa do rodapé (celular/tablet) — igual a
+///   antes: título da faixa, tempo atual à esquerda, tempo total à
+///   direita, barra de progresso entre eles, e controles com o botão
+///   de play GRANDE, AZUL e CIRCULAR no centro (aleatório à esquerda,
+///   anterior, play, próximo, repetir à direita — com um selo "1"
+///   quando a repetição está ligada).
 ///
-/// A barra de progresso é ESTIMADA a partir da quantidade de palavras
-/// (cerca de 150 palavras por minuto na velocidade 0.9) — nunca é uma
-/// posição exata da fala, porque o flutter_tts não informa o progresso.
+/// - PlayerCompacto: versão compacta para dentro do cabeçalho
+///   (desktop): título pequeno com ellipsis, anterior / play-pause /
+///   próximo, barra de progresso fina e tempos; aleatório e repetir
+///   menores, nas pontas.
+///
+/// A barra de progresso e os tempos usam a posição e a duração REAIS
+/// do áudio (streams do just_audio) — nada de estimativa. Os botões
+/// "Ouvir" dos cards e do Pão Nosso continuam separados: eles leem o
+/// versículo/reflexão em voz alta via TTS (flutter_tts).
+
+const _azulPlayer = Color(0xFF0B2A5B);
+
+/// Escuta os erros do player e mostra o SnackBar. Usado pelas duas
+/// vistas; cada vista cancela sua escuta ao sair da tela.
+mixin _ErrosDoPlayer<T extends StatefulWidget> on State<T> {
+  StreamSubscription<String>? _subErros;
+
+  void escutarErros(PlayerMusica player) {
+    _subErros = player.erros.listen((mensagem) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context)
+        ..clearSnackBars()
+        ..showSnackBar(SnackBar(content: Text(mensagem)));
+    });
+  }
+
+  @override
+  void dispose() {
+    _subErros?.cancel();
+    super.dispose();
+  }
+}
+
 class Miniplayer extends StatefulWidget {
-  const Miniplayer({super.key});
+  const Miniplayer({super.key, required this.player});
+
+  final PlayerMusica player;
 
   @override
   State<Miniplayer> createState() => _MiniplayerState();
 }
 
-class _MiniplayerState extends State<Miniplayer> {
-  final FlutterTts _tts = FlutterTts();
-  List<dynamic>? _versiculos;
-  int _indice = 0;
-  bool _tocando = false;
-  bool _aleatorio = false;
-  bool _repetir = false;
-  Timer? _temporizador;
-  Duration _decorrido = Duration.zero;
-  Duration _estimado = Duration.zero;
-
+class _MiniplayerState extends State<Miniplayer> with _ErrosDoPlayer {
   @override
   void initState() {
     super.initState();
-    _tts.setLanguage('pt-BR');
-    _tts.setSpeechRate(0.9);
-    _tts.setCompletionHandler(() {
-      if (!mounted || !_tocando) return;
-      if (_repetir) {
-        unawaited(_falarAtual());
-      } else {
-        unawaited(_proximo());
-      }
-    });
-    _carregar();
-  }
-
-  @override
-  void dispose() {
-    _temporizador?.cancel();
-    _tts.stop();
-    super.dispose();
-  }
-
-  Future<void> _carregar() async {
-    final dados = await Dados.versiculosDoDia();
-    if (!mounted) return;
-    final lista = dados['versiculos'] as List<dynamic>;
-    final hoje = Dados.versiculoDoDia(lista, DateTime.now());
-    setState(() {
-      _versiculos = lista;
-      _indice = lista.indexOf(hoje);
-      if (_indice < 0) _indice = 0;
-    });
-  }
-
-  Map<String, dynamic>? get _atual {
-    if (_versiculos == null || _versiculos!.isEmpty) return null;
-    return _versiculos![_indice] as Map<String, dynamic>;
-  }
-
-  /// Duração estimada da fala: ~150 palavras por minuto na velocidade 0.9.
-  Duration _estimarDuracao(String texto) {
-    final palavras = texto.trim().split(RegExp(r'\s+')).length;
-    final segundos = palavras / 2.5; // 150 palavras por minuto
-    return Duration(milliseconds: (segundos * 1000).round());
-  }
-
-  Future<void> _falarAtual() async {
-    final v = _atual;
-    if (v == null) return;
-    final texto = '${v['referencia']}. ${v['texto_arc']}';
-    _estimado = _estimarDuracao(texto);
-    _decorrido = Duration.zero;
-    _iniciarTemporizador();
-    setState(() => _tocando = true);
-    await _tts.speak(texto);
-  }
-
-  void _iniciarTemporizador() {
-    _temporizador?.cancel();
-    _temporizador = Timer.periodic(const Duration(milliseconds: 500), (_) {
-      if (!mounted || !_tocando) return;
-      setState(() {
-        _decorrido += const Duration(milliseconds: 500);
-        if (_decorrido >= _estimado) _decorrido = _estimado;
-      });
-    });
-  }
-
-  Future<void> _parar() async {
-    _temporizador?.cancel();
-    await _tts.stop();
-    if (mounted) {
-      setState(() {
-        _tocando = false;
-        _decorrido = Duration.zero;
-      });
-    }
-  }
-
-  Future<void> _alternarPlay() async {
-    if (_tocando) {
-      await _parar();
-    } else {
-      await _falarAtual();
-    }
-  }
-
-  Future<void> _irPara(int novoIndice) async {
-    if (_versiculos == null || _versiculos!.isEmpty) return;
-    final estavaTocando = _tocando;
-    await _parar();
-    if (!mounted) return;
-    setState(() => _indice = novoIndice);
-    if (estavaTocando) await _falarAtual();
-  }
-
-  Future<void> _proximo() {
-    final n = _versiculos!.length;
-    if (_aleatorio && n > 1) {
-      var sorteado = _indice;
-      while (sorteado == _indice) {
-        sorteado = Random().nextInt(n);
-      }
-      return _irPara(sorteado);
-    } else {
-      return _irPara((_indice + 1) % n);
-    }
-  }
-
-  Future<void> _anterior() {
-    final n = _versiculos!.length;
-    return _irPara((_indice - 1 + n) % n);
+    escutarErros(widget.player);
   }
 
   @override
   Widget build(BuildContext context) {
-    final v = _atual;
-    final titulo = v == null
-        ? 'Versículo do dia'
-        : 'Versículo do dia — ${v['referencia']}';
-    final corDestaque = Theme.of(context).colorScheme.secondary;
-    final progresso = _estimado.inMilliseconds == 0
-        ? 0.0
-        : (_decorrido.inMilliseconds / _estimado.inMilliseconds)
-            .clamp(0.0, 1.0);
-    return Container(
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.surface,
-        border: Border(top: BorderSide(color: Theme.of(context).dividerColor)),
-      ),
-      padding: const EdgeInsets.fromLTRB(8, 6, 8, 8),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Row(
+    final player = widget.player;
+    return ListenableBuilder(
+      listenable: player,
+      builder: (context, _) {
+        final corDestaque = Theme.of(context).colorScheme.secondary;
+        final corTextoSecundario =
+            Theme.of(context).colorScheme.onSurfaceVariant;
+        return Container(
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.surface,
+            border:
+                Border(top: BorderSide(color: Theme.of(context).dividerColor)),
+          ),
+          padding: const EdgeInsets.fromLTRB(16, 10, 16, 12),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              Expanded(
-                child: Text(
-                  titulo,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.titleSmall,
-                ),
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      'Agnus Dei',
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context).textTheme.titleSmall,
+                    ),
+                  ),
+                ],
               ),
-              IconButton(
-                icon: Icon(
-                  Icons.shuffle,
-                  color: _aleatorio ? corDestaque : null,
-                ),
-                tooltip: 'Aleatório',
-                onPressed: v == null
-                    ? null
-                    : () => setState(() => _aleatorio = !_aleatorio),
+              const SizedBox(height: 4),
+              Row(
+                children: [
+                  Text(
+                    PlayerMusica.formatarTempo(player.posicao),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodySmall
+                        ?.copyWith(color: corTextoSecundario),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: LinearProgressIndicator(
+                      value: player.progresso,
+                      minHeight: 4,
+                      valueColor: AlwaysStoppedAnimation<Color>(corDestaque),
+                      backgroundColor: Theme.of(context)
+                          .colorScheme
+                          .surfaceContainerHighest,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    PlayerMusica.formatarTempo(player.duracao),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodySmall
+                        ?.copyWith(color: corTextoSecundario),
+                  ),
+                ],
               ),
-              IconButton(
-                icon: const Icon(Icons.skip_previous),
-                tooltip: 'Anterior',
-                onPressed: v == null ? null : _anterior,
-              ),
-              IconButton(
-                icon: Icon(
-                  _tocando ? Icons.pause_circle_filled : Icons.play_circle_filled,
-                  size: 36,
-                ),
-                tooltip: _tocando ? 'Pausar' : 'Ouvir',
-                onPressed: v == null ? null : _alternarPlay,
-              ),
-              IconButton(
-                icon: const Icon(Icons.skip_next),
-                tooltip: 'Próximo',
-                onPressed: v == null ? null : _proximo,
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.repeat,
-                  color: _repetir ? corDestaque : null,
-                ),
-                tooltip: 'Repetir',
-                onPressed: v == null
-                    ? null
-                    : () => setState(() => _repetir = !_repetir),
+              const SizedBox(height: 6),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(
+                    icon: Icon(
+                      Icons.shuffle,
+                      color: player.aleatorio ? corDestaque : null,
+                    ),
+                    tooltip: 'Aleatório',
+                    onPressed: player.carregado
+                        ? player.alternarAleatorio
+                        : null,
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.skip_previous),
+                    tooltip: 'Anterior',
+                    onPressed: player.carregado ? player.reiniciar : null,
+                  ),
+                  SizedBox(
+                    width: 60,
+                    height: 60,
+                    child: FilledButton(
+                      onPressed:
+                          player.carregado ? player.alternarPlay : null,
+                      style: FilledButton.styleFrom(
+                        backgroundColor: _azulPlayer,
+                        foregroundColor: Colors.white,
+                        shape: const CircleBorder(),
+                        padding: EdgeInsets.zero,
+                      ),
+                      child: Icon(
+                        player.tocando ? Icons.pause : Icons.play_arrow,
+                        size: 32,
+                      ),
+                    ),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.skip_next),
+                    tooltip: 'Próximo',
+                    onPressed: player.carregado ? player.reiniciar : null,
+                  ),
+                  _BotaoRepetir(
+                    ativo: player.repetir,
+                    corDestaque: corDestaque,
+                    tamanho: 24,
+                    onPressed:
+                        player.carregado ? player.alternarRepetir : null,
+                  ),
+                ],
               ),
             ],
           ),
-          const SizedBox(height: 2),
-          LinearProgressIndicator(value: progresso),
-        ],
-      ),
+        );
+      },
+    );
+  }
+}
+
+/// Botão de repetir com o selo "1" quando a repetição está ligada.
+class _BotaoRepetir extends StatelessWidget {
+  const _BotaoRepetir({
+    required this.ativo,
+    required this.corDestaque,
+    required this.tamanho,
+    required this.onPressed,
+  });
+
+  final bool ativo;
+  final Color corDestaque;
+  final double tamanho;
+  final VoidCallback? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    final selo = tamanho <= 18 ? 12.0 : 14.0;
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        IconButton(
+          icon: Icon(
+            Icons.repeat,
+            size: tamanho,
+            color: ativo ? corDestaque : null,
+          ),
+          tooltip: 'Repetir',
+          padding: EdgeInsets.zero,
+          constraints: BoxConstraints.tightFor(
+            width: tamanho + 12,
+            height: tamanho + 12,
+          ),
+          onPressed: onPressed,
+        ),
+        if (ativo)
+          Positioned(
+            right: 0,
+            top: 0,
+            child: Container(
+              width: selo,
+              height: selo,
+              decoration: const BoxDecoration(
+                color: _azulPlayer,
+                shape: BoxShape.circle,
+              ),
+              alignment: Alignment.center,
+              child: Text(
+                '1',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: selo - 4,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+      ],
+    );
+  }
+}
+
+/// Player compacto do cabeçalho (só no desktop): duas linhas — na
+/// primeira, título pequeno com ellipsis + anterior / play-pause /
+/// próximo + aleatório e repetir menores; na segunda, tempo atual,
+/// barra de progresso fina e tempo total.
+class PlayerCompacto extends StatefulWidget {
+  const PlayerCompacto({super.key, required this.player});
+
+  final PlayerMusica player;
+
+  @override
+  State<PlayerCompacto> createState() => _PlayerCompactoState();
+}
+
+class _PlayerCompactoState extends State<PlayerCompacto>
+    with _ErrosDoPlayer {
+  @override
+  void initState() {
+    super.initState();
+    escutarErros(widget.player);
+  }
+
+  /// Botão pequeno do cabeçalho (30x30, ícone 18).
+  Widget _botaoPequeno({
+    required IconData icone,
+    required VoidCallback? onPressed,
+    Color? cor,
+    String? tooltip,
+  }) {
+    return IconButton(
+      icon: Icon(icone, size: 18, color: cor),
+      tooltip: tooltip,
+      padding: EdgeInsets.zero,
+      constraints: const BoxConstraints.tightFor(width: 30, height: 30),
+      onPressed: onPressed,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final player = widget.player;
+    return ListenableBuilder(
+      listenable: player,
+      builder: (context, _) {
+        final corDestaque = Theme.of(context).colorScheme.secondary;
+        final corTextoSecundario =
+            Theme.of(context).colorScheme.onSurfaceVariant;
+        final estiloTempo = Theme.of(context)
+            .textTheme
+            .bodySmall
+            ?.copyWith(color: corTextoSecundario, fontSize: 11);
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    'Agnus Dei',
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium
+                        ?.copyWith(fontWeight: FontWeight.w600),
+                  ),
+                ),
+                _botaoPequeno(
+                  icone: Icons.shuffle,
+                  cor: player.aleatorio ? corDestaque : null,
+                  tooltip: 'Aleatório',
+                  onPressed:
+                      player.carregado ? player.alternarAleatorio : null,
+                ),
+                _botaoPequeno(
+                  icone: Icons.skip_previous,
+                  tooltip: 'Anterior',
+                  onPressed: player.carregado ? player.reiniciar : null,
+                ),
+                SizedBox(
+                  width: 36,
+                  height: 36,
+                  child: FilledButton(
+                    onPressed: player.carregado ? player.alternarPlay : null,
+                    style: FilledButton.styleFrom(
+                      backgroundColor: _azulPlayer,
+                      foregroundColor: Colors.white,
+                      shape: const CircleBorder(),
+                      padding: EdgeInsets.zero,
+                    ),
+                    child: Icon(
+                      player.tocando ? Icons.pause : Icons.play_arrow,
+                      size: 20,
+                    ),
+                  ),
+                ),
+                _botaoPequeno(
+                  icone: Icons.skip_next,
+                  tooltip: 'Próximo',
+                  onPressed: player.carregado ? player.reiniciar : null,
+                ),
+                _BotaoRepetir(
+                  ativo: player.repetir,
+                  corDestaque: corDestaque,
+                  tamanho: 18,
+                  onPressed:
+                      player.carregado ? player.alternarRepetir : null,
+                ),
+              ],
+            ),
+            const SizedBox(height: 2),
+            Row(
+              children: [
+                Text(
+                  PlayerMusica.formatarTempo(player.posicao),
+                  style: estiloTempo,
+                ),
+                const SizedBox(width: 6),
+                Expanded(
+                  child: LinearProgressIndicator(
+                    value: player.progresso,
+                    minHeight: 3,
+                    valueColor: AlwaysStoppedAnimation<Color>(corDestaque),
+                    backgroundColor:
+                        Theme.of(context).colorScheme.surfaceContainerHighest,
+                  ),
+                ),
+                const SizedBox(width: 6),
+                Text(
+                  PlayerMusica.formatarTempo(player.duracao),
+                  style: estiloTempo,
+                ),
+              ],
+            ),
+          ],
+        );
+      },
     );
   }
 }

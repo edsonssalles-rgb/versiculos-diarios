@@ -18,17 +18,76 @@ class _TelaPaoNossoState extends State<TelaPaoNosso> {
   bool _lendo = false;
 
   @override
+  void initState() {
+    super.initState();
+    _tts.setErrorHandler((_) {
+      // A fala falhou (no Chrome web aparece SpeechSynthesisErrorEvent).
+      if (!mounted) return;
+      _mostrarErroVoz();
+    });
+  }
+
+  @override
   void dispose() {
     _tts.stop();
     super.dispose();
+  }
+
+  /// Escolhe uma voz em português (de preferência pt-BR) antes de falar.
+  /// No Chrome web a fala pode falhar sem uma voz explícita; sem voz em
+  /// pt disponível, segue com a voz padrão do sistema.
+  Future<void> _prepararVoz() async {
+    try {
+      final vozes = await _tts.getVoices;
+      Map<String, String>? escolhida;
+      for (final voz in vozes) {
+        final mapa = voz as Map;
+        final nome = (mapa['name'] as String?) ?? '';
+        final locale = (mapa['locale'] as String?) ?? '';
+        if (nome.isEmpty) continue;
+        if (locale.startsWith('pt-BR')) {
+          escolhida = {'name': nome, 'locale': locale};
+          break;
+        }
+        if (escolhida == null && locale.startsWith('pt')) {
+          escolhida = {'name': nome, 'locale': locale};
+        }
+      }
+      if (escolhida != null) {
+        await _tts.setVoice(escolhida);
+      }
+    } catch (_) {
+      // Sem lista de vozes: segue com a voz padrão.
+    }
+  }
+
+  void _mostrarErroVoz() {
+    ScaffoldMessenger.of(context)
+      ..clearSnackBars()
+      ..showSnackBar(
+        const SnackBar(
+          content: Text('Não foi possível ler em voz alta neste navegador.'),
+        ),
+      );
   }
 
   Future<void> _ouvir(String texto, String idioma) async {
     await _tts.setLanguage(idioma);
     await _tts.setSpeechRate(0.9);
     setState(() => _lendo = true);
-    await _tts.speak(texto);
-    setState(() => _lendo = false);
+    try {
+      await _prepararVoz();
+      final resultado = await _tts.speak(texto);
+      if (mounted) {
+        setState(() => _lendo = false);
+        if (resultado == 0) _mostrarErroVoz();
+      }
+    } catch (_) {
+      if (mounted) {
+        setState(() => _lendo = false);
+        _mostrarErroVoz();
+      }
+    }
   }
 
   @override

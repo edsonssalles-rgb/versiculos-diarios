@@ -30,6 +30,7 @@ flutter:
   assets:
     - assets/biblia/pt_arc.json
     - assets/versiculos/versiculos_90_prova.json
+    - assets/versiculos/versiculos_final.json
     - assets/ajuda/fichas_ajuda_rascunho.json
     - assets/pao_nosso/pao_nosso.json
     - assets/images/versiculo.jpg

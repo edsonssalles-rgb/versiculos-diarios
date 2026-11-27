@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 ///
 /// Fontes:
 /// - Bíblia: assets/biblia/pt_arc.json (Almeida Revista e Corrigida, domínio público)
-/// - Versículos do dia: assets/versiculos/versiculos_90_prova.json (LISTA DE PROVA)
+/// - Versículos do dia: assets/versiculos/versiculos_final.json (LISTA FINAL: 371 versículos, 53 por dia da semana)
 /// - Fichas de ajuda: assets/ajuda/fichas_ajuda_rascunho.json (RASCUNHO)
 /// - Pão Nosso: assets/pao_nosso/pao_nosso.json (reflexões escritas pelo Edson)
 class Dados {
@@ -21,7 +21,7 @@ class Dados {
 
   static Future<Map<String, dynamic>> versiculosDoDia() async {
     _versiculos ??= jsonDecode(
-      await rootBundle.loadString('assets/versiculos/versiculos_90_prova.json'),
+      await rootBundle.loadString('assets/versiculos/versiculos_final.json'),
     ) as Map<String, dynamic>;
     return _versiculos!;
   }
@@ -41,20 +41,18 @@ class Dados {
   }
 
   /// Versículo do dia: escolhido pelo DIA DA SEMANA, conforme o ciclo
-  /// definido pelo Edson (segunda = motivacional, terça = milagre e cura,
-  /// quarta = buscar a Deus e congregar, quinta = amor da família,
-  /// sexta = solução do problema impossível, sábado = reflexivo,
-  /// domingo = salvação).
+  /// definido pelo Edson (segunda = Motivação e fé, terça = Milagres,
+  /// quarta = Buscar a Deus, oração e Palavra, quinta = Família, amor e
+  /// união, sexta = Libertação e livramento, sábado = Conselhos e
+  /// prudência, domingo = Adoração).
   ///
-  /// A lista de prova tem 90 dias = 12 semanas + 6 dias (dia 1 = segunda).
-  /// A semana do ano avança o índice de 7 em 7, então toda segunda-feira
-  /// cai num versículo motivacional, toda terça num de milagre, e assim
-  /// por diante — certo nos primeiros 90 dias. Depois do dia 90 o ciclo
-  /// recomeça, e como 90 não é múltiplo de 7, o tema atrasa um dia por
-  /// ciclo (a segunda passa a mostrar o versículo de terça, e assim por
-  /// diante). É limitação da lista de prova, não do aplicativo: na lista
-  /// final, com 364 versículos (52 semanas exatas), o ciclo da semana
-  /// fica perfeito o ano inteiro.
+  /// A lista final tem 371 versículos = 53 por dia da semana (dia 1 =
+  /// segunda). A semana do ano avança o índice de 7 em 7, então toda
+  /// segunda-feira cai num versículo de Motivação e fé, toda terça num
+  /// de Milagres, e assim por diante. Como 371 = 53 x 7, o ciclo cobre
+  /// o ano inteiro sem repetir nem atrasar — inclusive em ano bissexto
+  /// (366 dias = 52 semanas + 2 dias, índice máximo 370). No ano
+  /// seguinte o ciclo recomeça do dia 1.
   static Map<String, dynamic> versiculoDoDia(
       List<dynamic> versiculos, DateTime hoje) {
     final inicioDoAno = DateTime(hoje.year, 1, 1);
